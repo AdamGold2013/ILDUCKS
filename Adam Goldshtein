@@ -1,0 +1,22 @@
+import os
+import telebot
+import random  
+# Замени 'TOKEN' на токен твоего бота
+# Этот токен ты получаешь от BotFather, чтобы бот мог работать
+token = ("8007245664:AAGztlFoakIdktTaHseeQ4c21iVy-rypnxA")
+bot = telebot.TeleBot(token)
+
+@bot.message_handler(commands=['facts_how_to_help_nature'])
+def send_hello(message):
+    bot.reply_to(message, "1. recycle. 2. don't harm animals. 3.use less gas and electricity. 4.help animals")
+
+@bot.message_handler(commands=['how_to_make_sculptures_out_of_garbage'])
+def send_hello(message):
+    bot.reply_to(message, "you can use anything even cigaretes, cans and more. there are many tutorials in youtube. you can even make something that helps animals, like a bird house from a plastic bottle")
+
+
+@bot.message_handler(commands=['harmfromecollogy'])
+def harm(message):
+        bot.reply_to(message, "garbage is very bad for nature animals can die from eating it and it destroys earth. in fact plastic takes 50 to 500 years before desapiring in nature")
+
+bot.polling()
